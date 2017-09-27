@@ -8,16 +8,32 @@
   <title></title>
 </head>
 <body>
+  <div class="jumbotron header">
+    <div class="container">
+    <h1 class="fade-in" id="hero-title">Trending... Visualized!</h1>
+    </div>
+  </div>
+
 
   <div class="container">
 
-    <div class="">
-      <div id="trending-topics"> <!--This is where we will display the trending topic buttons--></div>
+
+    <div id="null-state" class=""> <!--We will toggle this display when data is loaded-->
+      <div class="panel panel-default">
+        <div class="panel-body flex">
+          <img src="./Assets/Images/twitter.svg" alt="twitter logo" class="fade-in one">
+          <img src="./Assets/Images/facebook.svg" alt="facebook logo" class="fade-in two">
+          <img src="./Assets/Images/linkedin.svg" alt="linkedin logo" class="fade-in three">
+        </div>
     </div>
 
-    <div id="null-state"> <!--We will toggle this display when data is loaded-->
-
+    <h2>Trending Topics</h2>
+    <div class="trend-container panel panel-default">
+      <div class="panel-body">
+        <div id="trending-topics"> <!--This is where we will display the trending topic buttons--></div>
+      </div>
     </div>
+
 
     <div class="results">
       <div id="result-container"><!--This is where we will display the images--></div>
@@ -27,6 +43,7 @@
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./Assets/JS/animations.js" charset="utf-8"></script>
 <script src="./Assets/JS/main.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,8 +1,92 @@
 /* ==========================================================================
-    Section comment block
+    Typography
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans');
 
+h1 {
+  font-family: 'Asap Condensed', sans-serif;
+  text-align: right;
+  text-shadow: 2px 2px #47616e;
+}
 
-/* Sub-section comment block
+h2 {
+  font-family: 'Asap Condensed', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Main Containers
    ========================================================================== */
+.header {
+  background-image: url('../Images/SF-Day.jpg');
+  background-position: right top;
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  height: 40vh;
+  color: white;
+  box-shadow: 0px 3px 9px rgba(54, 54, 54, 0.78);
+  overflow-x: hidden;
+}
+
+.trend-container {
+  height: 100vh;
+  background-color: #fcfcfc;
+}
+
+/* Supporting Styles
+  ========================================================================== */
+
+.flex {
+  display: flex;
+  height: 33vh;
+}
+
+.panel-body > img {
+  flex-grow: 1;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.panel-body > img:hover {
+  transform: scale(1.05);
+}
+
+/* This class is added and removed to hide elements on the page */
+.invisible {
+  display: none;
+}
+
+
+/* Animations
+  ========================================================================== */
+
+.fade-in {
+  animation: fadeIn ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes fadeOut {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+.fade-in {
+ opacity: 0;  /* make things invisible upon start */
+ animation: fadeIn ease-in 1;
+ animation-fill-mode: forwards;
+ animation-duration: 1s;
+}
+
+.fade-in.one { animation-delay: 0.5s; }
+.fade-in.two { animation-delay: .9s; }
+.fade-in.three { animation-delay: 1.3s; }
+.fade-in.four { animation-delay: 1.8s; }
