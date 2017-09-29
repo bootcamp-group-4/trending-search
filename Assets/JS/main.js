@@ -16,6 +16,7 @@ $.ajax({
 
 $("#one").on("click", function() {
   var result = response;
+  console.log('hi');
   console.log(result);
     for(var i=0; i < result.articles.length; i++){
   console.log(result.articles[i].title);
@@ -24,8 +25,7 @@ $("#one").on("click", function() {
 console.log("here");
 
 
-
-
 });
+
 });
 });
