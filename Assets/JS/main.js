@@ -69,6 +69,7 @@ $(document).ready(function(){
     function clickListen() {
       $('.word').on('click', function() {
         console.log($(this).html());
+        callApi($(this).html());
       });
     }
 

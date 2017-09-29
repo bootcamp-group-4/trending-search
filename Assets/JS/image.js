@@ -1,16 +1,16 @@
 // $(document).ready(function(){
-	var searchString; 
-	var imgUrl = "https://api.gettyimages.com/v3/search/images?phrase=" + searchString;
 
-	
-function callApi(searhString) {
+
+function callApi(searhStringParam) {
+	var searchString = searhStringParam;
+	var imgUrl = "https://api.gettyimages.com/v3/search/images?phrase=" + searchString;
 	$.ajax({
 		url: imgUrl,
 		method: "GET",
 		headers: {
 			"Api-Key": "zt3qz3uwde547aygc5wkja7a"
 		}
-		
+
 	}).done(function(response){
 
 		console.log(response);
@@ -24,12 +24,12 @@ function callApi(searhString) {
 		//2.call a function with the declared var
 			//look below
 		//3.make a for loop for the returned values
-	
-		//4.construct the image DOM element and assign src value then append.
-		
 
-			
-		
+		//4.construct the image DOM element and assign src value then append.
+
+
+
+
 			// document.getelementbyid("trend-container");
 	});
 };
@@ -52,8 +52,3 @@ function writeToDom(imageElement) {
 	$("#result-container").append(imageElement);
 	console.log(imageElement);
 }
-
-
-
-
-
