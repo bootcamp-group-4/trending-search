@@ -47,7 +47,8 @@ $(document).ready(function(){
         a.html(words[i]);
         a.attr({
           href: '#',
-          rel: randNum
+          rel: randNum,
+          class: 'word'
         });
 
         $('#tag-cloud').append(a);
@@ -61,8 +62,15 @@ $(document).ready(function(){
       $(function () {
         $('#tag-cloud span').tagcloud();
       });
+
+      clickListen();
     }
 
+    function clickListen() {
+      $('.word').on('click', function() {
+        console.log($(this).html());
+      });
+    }
 
 
 
