@@ -1,5 +1,6 @@
 
 
+
 console.log('hi');
 
 /*!
@@ -96,11 +97,32 @@ console.log('hi');
 })(jQuery);
 
 
-$.fn.tagcloud.defaults = {
-  size: {start: 12, end: 40, unit: 'pt'},
-  color: {start: '#cde', end: '#f52'}
-};
-
-$(function () {
-  $('#tag-cloud a').tagcloud();
-});
+// //We are taking input and breaking into an array of works.
+//
+//   var str = "This is an amazing sentence.";
+//   var words = str.split(" ");
+//   for (var i = 0; i < words.length - 1; i++) {
+//       words[i] += " ";
+//   }
+//   console.log(words);
+//
+//   for (var i = 0; i < words.length; i++) {
+//     var randNum = Math.floor(Math.random() * 50);
+//     var a = $('<span>');
+//     a.html(words[i]);
+//     a.attr({
+//       href: '#',
+//       rel: randNum
+//     });
+//
+//     $('#tag-cloud').append(a);
+//   }
+//
+//   $.fn.tagcloud.defaults = {
+//     size: {start: 12, end: 40, unit: 'pt'},
+//     color: {start: '#cde', end: '#f52'}
+//   };
+//
+//   $(function () {
+//     $('#tag-cloud span').tagcloud();
+//   });
