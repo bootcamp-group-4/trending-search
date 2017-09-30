@@ -1,8 +1,5 @@
 
 
-
-console.log('hi');
-
 /*!
  * jquery.tagcloud.js
  * A Simple Tag Cloud Plugin for JQuery
