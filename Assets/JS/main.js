@@ -33,6 +33,9 @@ $(document).ready(function(){
 
   function setWordCloud() {
 
+    //Show trending-topics Container
+    $('#trend-container').removeClass('invisible');
+
     //Cear out the word cloud to start clean each time
     clearTopics();
 
@@ -50,18 +53,28 @@ $(document).ready(function(){
     }
     console.log(words);
 
-    for (var i = 0; i < 50; i++) {
-      var randNum = Math.floor(Math.random() * 50);
+    //Set random number to be used in the loop starting positoin below
+    var randNum1 = Math.floor(Math.random() * 100);
+
+    //Loop through the result set (start while starting at a random position)
+    for (var i = randNum1; i < randNum1 + 50; i++) {
+      var animationClasses = ['one', 'two', 'three', 'four'];
+      var randNum3 = Math.floor(Math.random() * 4);
+      var randClass = animationClasses[randNum3];
+      console.log(randClass);
+
+      var randNum2 = Math.floor(Math.random() * 50);
       var a = $('<span>');
       a.html(words[i]);
       a.attr({
         href: '#',
-        rel: randNum,
-        class: 'word'
+        rel: randNum2,
+        class: 'word fade-in ' + randClass
       });
 
       $('#tag-cloud').append(a);
     }
+
 
 
     //Set config for word Cloud.
