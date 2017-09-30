@@ -17,7 +17,6 @@ $(document).ready(function(){
 
       $("#one").on("click", function() {
         var result = response;
-        console.log('hi');
         console.log(result);
           for(var i=0; i < result.articles.length; i++){
           console.log(result.articles[i].title);
@@ -30,49 +29,71 @@ $(document).ready(function(){
     });
 
 
-    //We are taking input and breaking into an array of works.
+  //We are taking input and breaking into an array of works.
 
-    function setWordCloud() {
+  function setWordCloud() {
 
-      var str = resultsString;
-      var words = str.split(" ");
-      for (var i = 0; i < words.length; i++) {
-          words[i] += " ";
+    //Cear out the word cloud to start clean each time
+    clearTopics();
+
+    var str = resultsString;
+    var words = str.split(" ");
+    console.log(words);
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length < 4) {
+        //do nothing if the word is less than 3 chars
+        //This ignores the random numbers in the results
+        words[i] = '';
+      } else {
+        words[i] += " ";
       }
-      console.log(words);
-
-      for (var i = 0; i < words.length; i++) {
-        var randNum = Math.floor(Math.random() * 50);
-        var a = $('<span>');
-        a.html(words[i]);
-        a.attr({
-          href: '#',
-          rel: randNum,
-          class: 'word'
-        });
-
-        $('#tag-cloud').append(a);
-      }
-
-      $.fn.tagcloud.defaults = {
-        size: {start: 12, end: 40, unit: 'pt'},
-        color: {start: '#eed439', end: '#3e9cd3'}
-      };
-
-      $(function () {
-        $('#tag-cloud span').tagcloud();
-      });
-
-      clickListen();
     }
+    console.log(words);
 
-    function clickListen() {
-      $('.word').on('click', function() {
-        console.log($(this).html());
-        callApi($(this).html());
+    for (var i = 0; i < 50; i++) {
+      var randNum = Math.floor(Math.random() * 50);
+      var a = $('<span>');
+      a.html(words[i]);
+      a.attr({
+        href: '#',
+        rel: randNum,
+        class: 'word'
       });
+
+      $('#tag-cloud').append(a);
     }
 
 
+    //Set config for word Cloud.
+    $.fn.tagcloud.defaults = {
+      size: {start: 12, end: 40, unit: 'pt'},
+      color: {start: '#eed439', end: '#3e9cd3'}
+    };
+
+    //Initaite tag cloud creation
+    $(function () {
+      $('#tag-cloud span').tagcloud();
+    });
+
+    //Add click listeners to the newly styled tags.
+    clickListen();
+  }
+
+  function clickListen() {
+    $('.word').on('click', function() {
+      console.log($(this).html());
+      //empty image Div
+      clearImage();
+      callApi($(this).html());
+    });
+  }
+
+  function clearTopics() {
+    $('#tag-cloud').empty();
+  }
+
+  function clearImage() {
+    $("#result-container").empty();
+  }
 
   });
