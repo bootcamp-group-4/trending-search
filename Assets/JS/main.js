@@ -3,43 +3,35 @@ $(document).ready(function(){
 
   //website address we get
   // create app on twitter to get twitter api keys (4 keys)
-  var newsUrl = "https://newsapi.org/v1/articles?source=buzzfeed&sortBy=top&apiKey=ef7abdb0170d49058f8f1efdb483f219";
   //var newsApi = "https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=8c03397f019f4c738c663b53434095fc"
 
   var resultsString = "";
 
-  $.ajax({
-    url: newsUrl,
-    method: "GET",
+  function callNewsAPI(newsSource) {
+    var newsUrl = "https://newsapi.org/v1/articles?source="+ newsSource +"&sortBy=top&apiKey=ef7abdb0170d49058f8f1efdb483f219";
+
+    $.ajax({
+      url: newsUrl,
+      method: "GET",
 
     }).done(function(response) {
-       console.log(response.articles[0].title);
 
-      $("#one").on("click", function() {
-        var result = response;
-        console.log(result);
-          for(var i=0; i < result.articles.length; i++){
-          console.log(result.articles[i].title);
-          resultsString += result.articles[i].title + ' ';
-          }
-          setWordCloud();
-      console.log("here");
-      });
-
+      //Call concatenate Trends Funciton
+      concatenateTrends(response);
     });
+  }
 
+  function concatenateTrends(response) {
+    var result = response;
 
-  //We are taking input and breaking into an array of works.
+    for(var i=0; i < result.articles.length; i++){
+      resultsString += result.articles[i].title + ' ';
+    }
+    trendsToArray(resultsString);
+  }
 
-  function setWordCloud() {
-
-    //Show trending-topics Container
-    $('#trend-container').removeClass('invisible');
-
-    //Cear out the word cloud to start clean each time
-    clearTopics();
-
-    var str = resultsString;
+  function trendsToArray(string) {
+    var str = string;
     var words = str.split(" ");
     console.log(words);
     for (var i = 0; i < words.length; i++) {
@@ -53,6 +45,26 @@ $(document).ready(function(){
     }
     console.log(words);
 
+    //Call Word Cloud Function
+    setWordCloud(words);
+  }
+
+
+  $(".news-btn").on("click", function() {
+    callNewsAPI(this.dataset.source);
+  });
+
+  //We are taking input and breaking into an array of works.
+
+  function setWordCloud(words) {
+
+    //Show trending-topics Container
+    $('#trend-container').removeClass('invisible');
+
+    //Cear out the word cloud to start clean each time
+    clearTopics();
+
+
     //Set random number to be used in the loop starting positoin below
     var randNum1 = Math.floor(Math.random() * 100);
 
@@ -61,7 +73,6 @@ $(document).ready(function(){
       var animationClasses = ['one', 'two', 'three', 'four'];
       var randNum3 = Math.floor(Math.random() * 4);
       var randClass = animationClasses[randNum3];
-      console.log(randClass);
 
       var randNum2 = Math.floor(Math.random() * 50);
       var a = $('<span>');
@@ -109,4 +120,5 @@ $(document).ready(function(){
     $("#result-container").empty();
   }
 
-  });
+
+});

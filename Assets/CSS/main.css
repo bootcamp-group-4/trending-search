@@ -55,18 +55,16 @@ p {
   height: 33vh;
 }
 
-#one {
-  position: absolute;
+.news-btn {
   width: 140px;
-  top: 60px;
   cursor: pointer;
   transition: .5s ease-in-out;
-  left: 55px;
 }
 
-#one:hover {
+.news-btn:hover {
   transform: scale(1.05);
 }
+
 
 /* This class is added and removed to hide elements on the page */
 .invisible {
