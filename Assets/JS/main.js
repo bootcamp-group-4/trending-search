@@ -5,7 +5,6 @@ $(document).ready(function(){
   // create app on twitter to get twitter api keys (4 keys)
   //var newsApi = "https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=8c03397f019f4c738c663b53434095fc"
 
-  var resultsString = "";
 
   function callNewsAPI(newsSource) {
     var newsUrl = "https://newsapi.org/v1/articles?source="+ newsSource +"&sortBy=top&apiKey=ef7abdb0170d49058f8f1efdb483f219";
@@ -22,7 +21,9 @@ $(document).ready(function(){
   }
 
   function concatenateTrends(response) {
-    var result = response;
+    var result = '';
+    var resultsString = "";
+    result = response;
 
     for(var i=0; i < result.articles.length; i++){
       resultsString += result.articles[i].title + ' ';
@@ -32,7 +33,8 @@ $(document).ready(function(){
 
   function trendsToArray(string) {
     var str = string;
-    var words = str.split(" ");
+    var words = [];
+    words = str.split(" ");
     console.log(words);
     for (var i = 0; i < words.length; i++) {
       if (words[i].length < 4) {
@@ -66,7 +68,7 @@ $(document).ready(function(){
 
 
     //Set random number to be used in the loop starting positoin below
-    var randNum1 = Math.floor(Math.random() * 100);
+    var randNum1 = Math.floor(Math.random() * 50);
 
     //Loop through the result set (start while starting at a random position)
     for (var i = randNum1; i < randNum1 + 50; i++) {
