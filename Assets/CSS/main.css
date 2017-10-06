@@ -92,6 +92,16 @@ span, p {
 /* Supporting Styles
 ========================================================================== */
 
+.hover-img {
+  cursor: pointer;
+  filter: sepia(0);
+  transition: 1s ease-in-out !important;
+}
+
+.hover-img:hover {
+  filter: sepia(.7);
+}
+
 .flex {
   display: flex;
   height: 33vh;
