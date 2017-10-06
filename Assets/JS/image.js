@@ -27,7 +27,8 @@ function grabImage(response) {
 		img.attr({
 			src: response.images[i].display_sizes[0].uri,
 			'data-aos': 'fade-up',
-			id: i
+			id: i,
+			class: 'hover-img'
 		});
 		writeToDom(img);
 	};
@@ -38,6 +39,11 @@ function setImageAnimateOffset() {
 	setTimeout(function() {
 		AOS.refreshHard();
 	}, 500)
+
+	//Do it again just in case
+	setTimeout(function() {
+		AOS.refreshHard();
+	}, 1500)
 }
 
 function writeToDom(imageElement) {
