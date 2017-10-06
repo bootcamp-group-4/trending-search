@@ -3,15 +3,29 @@
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans');
-
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+body {
+  font-family: 'Proxima Nova';
+}
 h1 {
-  font-family: 'Asap Condensed', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
+
   text-align: right;
-  text-shadow: 2px 2px #47616e;
+  /*text-shadow: 2px 2px #47616e;*/
+  text-transform: uppercase;
+  font-size: 30px !important;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: -40px;
 }
 
 h2 {
-  font-family: 'Asap Condensed', sans-serif;
+  font-family: 'Proxima Nova';
+}
+span {
+  font-size: 93px;
+  font-weight: 200;
 }
 
 h3 {
@@ -21,24 +35,57 @@ h3 {
 }
 
 span, p {
-  font-family: 'Asap Condensed', sans-serif;
+  font-family: 'Proxima Nova';
 }
 
 /* Main Containers
    ========================================================================== */
 .header {
-  background: linear-gradient(135deg, #c1bebe, #1d607a);
+/*  background: linear-gradient(135deg, #c1bebe, #1d607a); */
   /*background-image: url('../Images/SF-Day.jpg');*/
   background-position: right top;
   background-size: cover;
   /*background-attachment: fixed;*/
   height: 40vh;
-  color: white;
+  color: #fcfcfc;
   box-shadow: 0px 3px 9px rgba(54, 54, 54, 0.78);
+/*  background: -webkit-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
+  background: -o-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
+  background: -moz-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
+  background: linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0); */
   overflow: hidden;
   position: relative;
-}
+  opacity: 50%;
+  /*background-image: url('../Images/tvtv.png'); */
+  background-repeat: repeat-x;
+  background-position: center;
+  backface-visibility: visible;
 
+
+    background: url('../Images/tv1234.png') repeat 0 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    height: 300px;
+    padding-top: 120px;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+  }
+
+
+  @-webkit-keyframes slide {
+      from { background-position: 0 0; }
+      to { background-position: -400px 0; }
+  }
+
+
+
+
+
+/*jumbotron {
+  background-image: url('../Images/tv.png');
+  background-repeat: repeat-x;
+} */
 .trend-container {
   /*height: 100vh;*/
   background-color: #fcfcfc;
@@ -56,12 +103,19 @@ span, p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
 }
 
 #trending-topics {
   text-align: center;
 }
 
+.panel {
+  border-color: transparent !important;
+}
+.trend-container {
+  background-color: #faf6ec !important;
+}
 
 /* News Source Button Containers
   ========================================================================== */
