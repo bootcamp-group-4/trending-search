@@ -3,15 +3,16 @@
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css?family=Asap+Condensed|Open+Sans');
+@import  url("https://fonts.googleapis.com/css?family=Lora");
 
 h1 {
-  font-family: 'Asap Condensed', sans-serif;
+  font-family:'Lora', serif;
   text-align: right;
   text-shadow: 2px 2px #47616e;
 }
 
 h2 {
-  font-family: 'Asap Condensed', sans-serif;
+  font-family: 'Lora', serif;;
 }
 
 p {
