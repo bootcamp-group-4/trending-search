@@ -14,7 +14,7 @@ $(document).ready(function(){
       method: "GET",
 
     }).done(function(response) {
-
+      console.log(response)
       //Call concatenate Trends Funciton
       concatenateTrends(response);
     });

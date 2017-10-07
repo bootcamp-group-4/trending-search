@@ -9,31 +9,36 @@ body {
   font-family: 'Proxima Nova';
 }
 h1 {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Cookie', cursive;
+/*  font-family: 'Cinzel', serif; 
+*/  font-family: 'Proxima Nova', sans-serif;
 
   text-align: right;
-  /*text-shadow: 2px 2px #47616e;*/
+  vertical-align: middle;
   text-transform: uppercase;
-  font-size: 30px !important;
+  font-size: 50px !important;
   text-align: center;
   letter-spacing: 2px;
-  margin-top: -40px;
+  margin-top: 50px;
+  color: #f1f1f1 !important;
 }
 
 h2 {
   font-family: 'Proxima Nova';
-}
-span {
-  font-size: 93px;
-  font-weight: 200;
+  color: #3e3e3e;
+  font-size: 25px;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-family: 'Asap Condensed', sans-serif;
-  text-align: center;
-  color: #1d607a;
+  margin-left: 2%;
 }
 
+span {
+  font-size: 50px;
+
+
+}
 span, p {
   font-family: 'Proxima Nova';
 }
@@ -41,36 +46,44 @@ span, p {
 /* Main Containers
    ========================================================================== */
 .header {
-/*  background: linear-gradient(135deg, #c1bebe, #1d607a); */
-  /*background-image: url('../Images/SF-Day.jpg');*/
-  background-position: right top;
-  background-size: cover;
-  /*background-attachment: fixed;*/
-  height: 40vh;
-  color: #fcfcfc;
-  box-shadow: 0px 3px 9px rgba(54, 54, 54, 0.78);
-/*  background: -webkit-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
-  background: -o-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
-  background: -moz-linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0);
-  background: linear-gradient(left,#c0c0c0, #c0c000, #00c0c0, #c000c0, #c00000, #0000c0); */
-  overflow: hidden;
-  position: relative;
-  opacity: 50%;
-  /*background-image: url('../Images/tvtv.png'); */
-  background-repeat: repeat-x;
-  background-position: center;
-  backface-visibility: visible;
 
+  	height: 250px;
+  	/* max-height: 600px; */
+  	width: 100%;
+  	background-color: hsla(200,40%,30%,.4);
+  	background-image:
+  		url('../Images/forest1.png'),
+  		url('../Images/forest2.png'),
 
-    background: url('../Images/tv1234.png') repeat 0 0;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    height: 300px;
-    padding-top: 120px;
-    box-sizing: border-box;
-    -webkit-animation: slide 20s linear infinite;
-  }
+  		url('../Images/forest3.png');
+
+  	background-repeat: repeat-x;
+  	background-position:
+  		0 20%,
+  		0 95%,
+  		0 0,
+  		0 100%,
+  		0 0;
+  	background-size:
+  		2500px,
+  		800px,
+  		500px 200px,
+  		1000px,
+  		400px 260px;
+  	animation: 50s para infinite linear;
+  	}
+
+  @keyframes para {
+  	100% {
+  		background-position:
+  			-5000px 20%,
+  			-800px 95%,
+  			500px 0,
+  			1000px 100%,
+  			400px 0;
+  		}
+  	}
+
 
 
   @-webkit-keyframes slide {
@@ -114,7 +127,7 @@ span, p {
   border-color: transparent !important;
 }
 .trend-container {
-  background-color: #faf6ec !important;
+  background-color: lightgray !important;
 }
 
 /* News Source Button Containers
@@ -136,25 +149,14 @@ span, p {
   max-height: 8vw;
   cursor: pointer;
   transition: .5s ease-in-out;
-  border-radius: 50%;
 }
 
 .news-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Supporting Styles
 ========================================================================== */
-
-.hover-img {
-  cursor: pointer;
-  filter: sepia(0);
-  transition: 1s ease-in-out !important;
-}
-
-.hover-img:hover {
-  filter: sepia(.7);
-}
 
 .flex {
   display: flex;
@@ -204,21 +206,21 @@ span, p {
 }
 
 .fade-in.one { animation-delay: 0.2s; }
-.fade-in.two { animation-delay: .6s; }
-.fade-in.three { animation-delay: 1.0s; }
-.fade-in.four { animation-delay: 1.4s; }
-.fade-in.five { animation-delay: 1.8s; }
+.fade-in.two { animation-delay: .4s; }
+.fade-in.three { animation-delay: .8s; }
+.fade-in.four { animation-delay: 1.0s; }
 
 
 
-/*.pulse-button {
+.pulse-button {
+  border-radius: 50%;
   border: none;
   box-shadow: 0 0 0 0 rgba(144, 223, 170, 0.61);
   animation: pulse 3.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 .pulse-button:hover {
   animation: none;
-}*/
+}
 
 
 /*@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}*/
